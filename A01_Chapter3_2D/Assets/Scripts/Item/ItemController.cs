@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void ItemSpawn()
-    {
+    public static ItemController Instance { get; private set; }
 
+    private List<GameObject> itemList = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    public void ItemMove()
+    public void RandomItem(GameObject item)
     {
+        itemList.Add(item);
 
-    }
+        // 아이템에 이동 스크립트 추가
+        item.AddComponent<ItemMove>();
+    }       
 
     public virtual void ItemUse() 
     {
