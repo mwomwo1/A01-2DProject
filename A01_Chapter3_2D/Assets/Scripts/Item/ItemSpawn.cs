@@ -26,7 +26,10 @@ public class ItemSpawn : MonoBehaviour
             Vector2 spawnPosition = new Vector3(randomX, 4.7f);
             int randomIndex = Random.Range(0, itemPrefabs.Length);
             GameObject newItem = Instantiate(itemPrefabs[randomIndex], spawnPosition, Quaternion.identity);
-            
+
+            // 생성된 아이템에 이동 스크립트 추가
+            newItem.AddComponent<ItemMove>();
+
             Destroy(newItem, 7f); // 7초 후에 아이템 삭제
         }
     }
