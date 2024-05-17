@@ -22,7 +22,7 @@ public class ItemCollider : MonoBehaviour
                 break;
             case "PowerUpItem":
                 item.GetComponent<PowerUpItem>().ItemUse();
-                Debug.Log("파워 업 아이템 사용");
+                Debug.Log("파워업 아이템");
                 break;
             case "ShieldItem":                
                 item.GetComponent<ShieldItem>().ItemUse();

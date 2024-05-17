@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public partial class AllItemUse : MonoBehaviour
+public class AllItemUse : MonoBehaviour
 {
     public virtual void ItemUse()
     {
