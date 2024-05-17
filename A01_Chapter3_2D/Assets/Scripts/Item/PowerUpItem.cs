@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿using System.Collections;
 using UnityEngine;
 
-public class PowerUpItem : ItemController
+public class PowerUpItem : AllItemUse
 {
     public override void ItemUse()
     {
-        //ÇÃ·¹ÀÌ¾îÀÇ ¹Ì»çÀÏÀÇ ¼Óµµ°¡ Áõ°¡ È¤Àº °¹¼ö°¡ Áõ°¡ È¤Àº ¹üÀ§°¡ Áõ°¡ 
-        //Æ¯Á¤½Ã°£ÀÌ Áö³ª¸é ´Ù½Ã ¿ø·¡´ë·Î µ¹¾Æ¿È
+        //í”Œë ˆì´ì–´ì˜ ë¯¸ì‚¬ì¼ì˜ ì†ë„ê°€ ì¦ê°€ í˜¹ì€ ê°¯ìˆ˜ê°€ ì¦ê°€ í˜¹ì€ ë²”ìœ„ê°€ ì¦ê°€ 
+        //íŠ¹ì •ì‹œê°„ì´ ì§€ë‚˜ë©´ ë‹¤ì‹œ ì›ë˜ëŒ€ë¡œ ëŒì•„ì˜´
     }
 }
+
+

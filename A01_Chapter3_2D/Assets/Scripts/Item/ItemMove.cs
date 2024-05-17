@@ -10,7 +10,7 @@ public class ItemMove : MonoBehaviour
     private void Start()
     {
         // 랜덤 이동 방향 설정
-        float randomAngle = Random.Range(0f, 360f);
+        float randomAngle = Random.Range(20f, 340f);
         moveDirection = Quaternion.Euler(0f, 0f, randomAngle) * Vector2.right;
     }
 
@@ -27,7 +27,7 @@ public class ItemMove : MonoBehaviour
         Vector2 position = transform.position;
         //현재 위치
         Vector2 viewportPosition = Camera.main.WorldToViewportPoint(position); 
-        // 월드좌표를 기준으로 뷰포트 좌표를 변환 
+        // 월드좌표를 기준으로 뷰포트 좌표로 변환 
 
         if (viewportPosition.x <= 0 || viewportPosition.x >= 1)
         {
