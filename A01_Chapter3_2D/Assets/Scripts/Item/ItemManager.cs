@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static AllItemUse;
 
-public partial class ItemController : MonoBehaviour
+public partial class ItemManager : MonoBehaviour
 {
-    public static ItemController Instance { get; private set; }
+    public static ItemManager Instance { get; private set; }
 
     private List<GameObject> itemList = new List<GameObject>();
 

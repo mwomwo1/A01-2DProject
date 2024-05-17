@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class ItemCollider : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class ItemCollider : MonoBehaviour
                 break;
         }
         Destroy(item);
+        //(아이템 획득 사운드)
     }
 }
 
