@@ -17,18 +17,18 @@ public class ItemSpawn : MonoBehaviour
     {
         while (true)
         {
-            // 랜덤한 시간 대기
-            float spawnInterval = Random.Range(15f, 40f);
+            // 15초에서 40초사이의 랜덤한시간에 아이템 생성
+            float spawnInterval = Random.Range(1f, 4f); 
             yield return new WaitForSeconds(spawnInterval);
 
             // 랜덤한 위치에 랜덤한 아이템을 생성
             float randomX = Random.Range(-2.5f, 2.5f);
             Vector2 spawnPosition = new Vector3(randomX, 4.7f);
             int randomIndex = Random.Range(0, itemPrefabs.Length);
-            GameObject newItem = Instantiate(itemPrefabs[randomIndex], spawnPosition, Quaternion.identity);
+            GameObject newItem = Instantiate(itemPrefabs[randomIndex], spawnPosition, Quaternion.identity, transform);
 
-            ItemController.Instance.RandomItem(newItem);
-                       
+            ItemManager.Instance.RandomItem(newItem); //아이템 컨트롤러에 저장                        
+
             Destroy(newItem, 10f); // 7초 후에 아이템 삭제
         }
     }
