@@ -4,12 +4,13 @@ using UnityEngine;
 public class NormalEnemy : MonoBehaviour
 {
     public GameObject normalEnemy;
-    public EnemyData enemy = new(1, 0.01f);
+    public EnemyData enemy = new(1, 0.03f);
 
 
     //GameManager로 이동할 코드
     void Start()
     {
+        //Application.targetFrameRate = 60;
         //InvokeRepeating("MakeEnemy", 0f, 3f);
         MakeEnemy();
     }
@@ -73,6 +74,8 @@ public class NormalEnemy : MonoBehaviour
                 Destroy(normalEnemy, 3.0f);
                 //GameManager.Instance.AddScore();
             }
+
+            //플레이어와 충돌 시에도 피해 줌
         }
     }
 }
