@@ -1,11 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ï»¿using UnityEngine;
 
-public class HealItem : ItemController
+public class HealItem : AllItemUse
 {
     public override void ItemUse()
     {
-        //ÇÃ·¹ÀÌ¾îÀÇ Ã¼·Â(ÇÏÆ®)¸¦ ÇÏ³ª ¿Ã·ÁÁÜ Ã¼·ÂÀÌ °¡µæÃ¡´Ù¸é ¾Æ¹«ÀÏµµ ¾ÈÀÏ¾î³².
+        //í”Œë ˆì´ì–´ì˜ ì²´ë ¥(í•˜íŠ¸)ë¥¼ í•˜ë‚˜ ì˜¬ë ¤ì¤Œ ì²´ë ¥ì´ ê°€ë“ì°¼ë‹¤ë©´ ì•„ë¬´ì¼ë„ ì•ˆ ì¼ì–´ë‚¨.
+        //if (PlayerHp < 3)
+        //{
+        //    PlayerHp += 1;
+        //}
+        //else
+        //{
+        //    return;
+        //}        
     }
 }
+
+

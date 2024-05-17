@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AllItemUse;
 
-public class ItemController : MonoBehaviour
+public partial class ItemController : MonoBehaviour
 {
     public static ItemController Instance { get; private set; }
 
@@ -23,14 +24,14 @@ public class ItemController : MonoBehaviour
 
     public void RandomItem(GameObject item)
     {
+        // 랜덤 생성된 아이템을 아이템 리스트에 추가
         itemList.Add(item);
 
-        // 아이템에 이동 스크립트 추가
+        // 랜덤 생성된 아이템에 이동 스크립트 추가
         item.AddComponent<ItemMove>();
-    }       
 
-    public virtual void ItemUse() 
-    {
-
+        //랜덤 생성된 아이템에 충돌 스크립트 추가
+        item.AddComponent<ItemCollider>();
     }
 }
+    
