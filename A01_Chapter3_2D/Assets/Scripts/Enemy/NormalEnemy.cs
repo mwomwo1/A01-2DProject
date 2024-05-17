@@ -4,15 +4,11 @@ using UnityEngine;
 public class NormalEnemy : MonoBehaviour
 {
     public GameObject normalEnemy;
-    public EnemyData enemy = new(1, 0.03f);
+    public EnemyData enemy = new(1, 0.01f);
 
-
-    //GameManager로 이동할 코드
     void Start()
     {
-        //Application.targetFrameRate = 60;
-        //InvokeRepeating("MakeEnemy", 0f, 3f);
-        MakeEnemy();
+        SpawnEnemy();
     }
 
     void Update()
@@ -20,14 +16,13 @@ public class NormalEnemy : MonoBehaviour
         MoveEnemy(enemy);
     }
 
-    private void MakeEnemy()
-    {
-        // 일반 타입 enemy를 화면 상단에 랜덤 생성(배치)
-        //Instantiate(normalEnemy);
+    // 일반 적 생성
 
+    private void SpawnEnemy()
+    {
         Debug.Log("화면 상단에 적 랜덤 생성");
 
-        float x = Random.Range(-3.0f, 3.0f);
+        float x = Random.Range(-2.5f, 2.5f);
         float y = 5.0f;
         transform.position = new Vector3(x, y);
     }
@@ -39,7 +34,7 @@ public class NormalEnemy : MonoBehaviour
         if (enemy.Hp > 0)
         {
             transform.position += Vector3.down * enemy.Speed;
-            if (transform.position.y < -4.0f)
+            if (transform.position.y < -5.0f)
             {
                 Debug.Log("화면 최하단에 도달한 적 오브젝트를 파괴합니다.");
                 Destroy(normalEnemy, 3.0f);
@@ -52,10 +47,7 @@ public class NormalEnemy : MonoBehaviour
         // 총알 생성 함수 호출하기
     }
 
-    //충돌 감지
-
-    private void DestoryEnemy() { }
-
+    //이하 충돌 감지
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -75,7 +67,10 @@ public class NormalEnemy : MonoBehaviour
                 //GameManager.Instance.AddScore();
             }
 
-            //플레이어와 충돌 시에도 피해 줌
+            // TODO: 플레이어와 충돌 시에도 피해 줌
+
+            // TODO: (HP가 1 이상인 적만) HP가 1 남았을때 붉은 색조 입히기
+
         }
     }
 }
